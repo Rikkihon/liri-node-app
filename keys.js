@@ -23,8 +23,8 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 var Spotify = require('node-spotify-api');
  
 var spotify = new Spotify({
-  id: <your spotify client id>,
-  secret: <your spotify client secret>
+  id: <a9074fb337aa45e4b29d261db998b8a8>,
+  secret: 53d3955d713345f6981ecbbe4d472320
 });
  
 spotify
