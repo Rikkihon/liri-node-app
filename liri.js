@@ -1,10 +1,8 @@
 require("dotenv").config();
-require("/Users/rikki/Desktop/liri-node-app/keys.js");
+const keys = require("/Users/rikki/Desktop/liri-node-app/keys.js");
 let fs = require("fs");
 let action = process.argv[2];
-var keys = new Keys(keys);
-let Twitter = require('twitter');
-var spotify = new Spotify(keys.spotify);
+let Twitter = require('twitter'); 
 var client = new Twitter(keys.twitter);
 var Spotify = require('node-spotify-api');
 
@@ -15,7 +13,7 @@ var client = new Twitter({
     access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   });
-  console.log('this is loaded');
+  
   //Make it so liri.js can take in one of the following commands:
 //* `my-tweets`
 //* `spotify-this-song`
