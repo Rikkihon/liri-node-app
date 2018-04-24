@@ -12,9 +12,8 @@ fs.readFile("random.txt", "utf8", function(error, data) {
   if (error) {
     return console.log(error);
   }
-  //console.log(data);
-  //var dataArr = data.split(",");
-  //console.log(dataArr);
+  //this part is so that it will read the file
+  var dataArr = data.split(",");
 });
 
 
@@ -47,7 +46,7 @@ inquirer.prompt([
     {
       type: "input",
       name: 'songormovie',
-      message: "choose a song, movie, or tweet that you want?"
+      message: "choose a song or  movie? (This will not work for tweets)."
     }
   ]).then(function(user){
     console.log(user.songormovie);
@@ -61,12 +60,14 @@ inquirer.prompt([
     console.log("This song is called : I want it that way");
     console.log("Here's a link to the song: https://api.spotify.com/v1/tracks/6e40mgJiCid5HRAGrbpGA6");
     console.log("Artists's name is The Backstreet Boys")
+    log.txt
     return
     }
 
     if (action =="movie-this" && SearchQ == " "){
     console.log("You didn't enter a movie. " )
     console.log("If you haven't watched Mr. Nobody, then you should watch it on Netflix: http://www.imdb.com/title/tt0485947'")
+    fs.appendFile('random.txt', "If you haven't watched Mr. Nobody, then you should watch it on Netflix: http://www.imdb.com/title/tt0485947'",'utf8')
     return
     }
 //* `My-Tweets`
@@ -100,10 +101,28 @@ function tweets() {
   var params = { statuses: 'nodejs' };
   client.get('statuses/user_timeline', params, function (error, tweets) {
     if (!error) {
-      for ( i= 0; i<20; i++ )
-      console.log("The most recent tweet is, but see the random.txt file for the last 20." + tweets[i].text);
-      fs.appendFile('random.txt',tweets[0].text, tweets[1].text, tweets[2].text, tweets[3].text, 'utf8')
-      console.log("random.txt was updated with the most recent tweet below.")
+      console.log("The most recent tweet is listed here. \n Please see the random.txt file for the last 20 (all on one line) : " + tweets[0].text);
+    
+      fs.appendFile('random.txt', tweets[0].text,  'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[1].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[2].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[3].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[4].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[5].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[6].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[7].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[8].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[9].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[10].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[11].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[12].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[13].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[14].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[15].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[16].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[17].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[18].text, 'utf8', function(err){if (err) {console.log(err)}})
+      fs.appendFile('random.txt', tweets[19].text, 'utf8', function(err){if (err) {console.log(err)}})
     }
   })
   .catch(function (err){
@@ -121,7 +140,7 @@ function songs(SearchQ) {
         console.log("Artists's name is  ");
         for (let i = 0; i < data.tracks.items[0].artists.length; i++) {
           console.log(i + ": ", data.tracks.items[0].artists[i].name);
-          fs.appendFile(random.txt, data.tracks.items[0].artists[i].name);
+          fs.appendFile('random.txt', data.tracks.items[0].artists[i].name);
         }
       })
       .catch(function (err) {
