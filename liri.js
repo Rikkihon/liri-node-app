@@ -2,8 +2,8 @@ const dotenv = require("dotenv").config();
 const keys = require("/Users/rikki/Desktop/liri-node-app/keys.js");
 let request = require("request");
 let fs = require("fs");
-//let action = process.argv[2];
-//let SearchQ = process.argv[3];
+let actions = process.argv[2];
+let SearchQs = process.argv[3];
 let Twitter = require('twitter');
 let textFile = process.argv[2];
 let Spotify = require('node-spotify-api');
@@ -97,12 +97,11 @@ switch (action) {
 }
 
 function tweets() {
-  fs.readFile("random.txt", "utf8",)
-  var params = { statuses: 'nodejs' };
-  client.get('statuses/user_timeline', params, function (error, tweets) {
+  //fs.readFile("random.txt", "utf8",)
+  //var params = { statuses: 'nodejs' };
+  client.get('statuses/user_timeline', function (error, tweets) {
     if (!error) {
       console.log("The most recent tweet is listed here. \n Please see the random.txt file for the last 20 (all on one line) : " + tweets[0].text);
-    
       fs.appendFile('random.txt', tweets[0].text,  'utf8', function(err){if (err) {console.log(err)}})
       fs.appendFile('random.txt', tweets[1].text, 'utf8', function(err){if (err) {console.log(err)}})
       fs.appendFile('random.txt', tweets[2].text, 'utf8', function(err){if (err) {console.log(err)}})
@@ -125,9 +124,9 @@ function tweets() {
       fs.appendFile('random.txt', tweets[19].text, 'utf8', function(err){if (err) {console.log(err)}})
     }
   })
-  .catch(function (err){
-    console.log("an error occurred"+ err);
-  });
+  //.catch(function (err){
+    //console.log("an error occurred"+ err);
+  //});
 }
 
 function songs(SearchQ) {
@@ -140,7 +139,10 @@ function songs(SearchQ) {
         console.log("Artists's name is  ");
         for (let i = 0; i < data.tracks.items[0].artists.length; i++) {
           console.log(i + ": ", data.tracks.items[0].artists[i].name);
-          fs.appendFile('random.txt', data.tracks.items[0].artists[i].name);
+          fs.appendFile('log.txt', data.tracks.items[0].artists[i].name)//function(err){if (err) {console.log(err)}});
+          fs.appendFile('log.txt', data.tracks.items[0].href)//function(err){if (err) {console.log(err)}});
+          fs.appendFile('log.txt', data.tracks.items[0].name)//,function(err){if (err) {console.log(err)}});
+          fs.appendFile('log.txt', data.tracks.items[0].album.name)//function(err){if (err) {console.log(err)}});
         }
       })
       .catch(function (err) {
@@ -159,6 +161,8 @@ function movie(SearchQ) {
       console.log("The movie's release year is: " + JSON.parse(body).Year);
       console.log("The movie's on IMDB here: " + JSON.parse(body).title);
       console.log("The movie's on IMDB here: " + JSON.parse(body).imdbID);
+      console.log("The movie's country is : " + JSON.parse(body).country);
+      console.log("The movie's plot is : " + JSON.parse(body).plot);
     }
   })
   .catch(function (error){

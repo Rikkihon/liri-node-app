@@ -1,0 +1,21 @@
+
+spotify-this-song, "I Want it That Way"
+
+ movie-this, "Mr. Nobody"
+
+ do-what-it-says
+ note: Liri can only do 4 things, but she still thinks she is smart.message: "Welcome to Liri. I am a partial robot.  I can read your typing and complete the task.",Just a few more tweets to go!@Trianglemancsd I wish! I liked playing, but I needed more practice to not be the ultimate worst player and would b… https://t.co/XTnRFcSAaDI put input prompts on mine, so that you can tell it what movie you want, instead of just typing it in on the command line in nodeThe class has to call the app "liri" instead of "siri", because it's a typed -language interface instead of voice command.The other component of this app is to find a movie or spotify song. Basically do the same query to spotify or imdb'… https://t.co/JOsuON45PC@Trianglemancsd too true, too true!.catch(function (err){
+    console.log("an error occurred"+ err);
+  });
+}console.log("The most recent tweet is, but see the random.txt file for the last 20." + tweets[i].text);
+      fs.ap… https://t.co/neRitakAWaLooks like my code will be over 240 characters. 
+function tweets() {
+  fs.readFile("random.txt", "utf8",)
+  var par… https://t.co/c4TLWVbpFbThey do count, yes @Trianglemancsd !Here's the code for parsing the jquery body:  tweets[i].text. So easy, right? Muy facile!So I have some twitter API keys now. I guess I could also write a twitter bot.The way we did this is by logging the body through ajax and then parsing it through jquery.This is part of the U of MN's coding bootcamp program.Logging it using AJAX queries on node.js.I have to make a bunch of new tweets here. Probably about 20. My homework is to log my most recent 20 tweets.Oops, I forgot the link: https://t.co/c3hpIeygFGI know this is a little salacious, but this US-Weekly references my favorite podcast ever @RISKshow  and it's crazy… https://t.co/zXrGep8ZSBnote: Liri can only do 4 things, but she still thinks she is smart.message: "Welcome to Liri. I am a partial robot.  I can read your typing and complete the task.",Just a few more tweets to go!@Trianglemancsd I wish! I liked playing, but I needed more practice to not be the ultimate worst player and would b… https://t.co/XTnRFcSAaDI put input prompts on mine, so that you can tell it what movie you want, instead of just typing it in on the command line in nodeThe class has to call the app "liri" instead of "siri", because it's a typed -language interface instead of voice command.The other component of this app is to find a movie or spotify song. Basically do the same query to spotify or imdb'… https://t.co/JOsuON45PC@Trianglemancsd too true, too true!.catch(function (err){
+    console.log("an error occurred"+ err);
+  });
+}console.log("The most recent tweet is, but see the random.txt file for the last 20." + tweets[i].text);
+      fs.ap… https://t.co/neRitakAWaLooks like my code will be over 240 characters. 
+function tweets() {
+  fs.readFile("random.txt", "utf8",)
+  var par… https://t.co/c4TLWVbpFbThey do count, yes @Trianglemancsd !Here's the code for parsing the jquery body:  tweets[i].text. So easy, right? Muy facile!So I have some twitter API keys now. I guess I could also write a twitter bot.The way we did this is by logging the body through ajax and then parsing it through jquery.This is part of the U of MN's coding bootcamp program.Logging it using AJAX queries on node.js.I have to make a bunch of new tweets here. Probably about 20. My homework is to log my most recent 20 tweets.Oops, I forgot the link: https://t.co/c3hpIeygFGI know this is a little salacious, but this US-Weekly references my favorite podcast ever @RISKshow  and it's crazy… https://t.co/zXrGep8ZSB
