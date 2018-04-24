@@ -159,10 +159,10 @@ function movie(SearchQ) {
       // Parse the body of the site and recover just the imdbRating
       console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
       console.log("The movie's release year is: " + JSON.parse(body).Year);
-      console.log("The movie's on IMDB here: " + JSON.parse(body).title);
+      console.log("The movie's on IMDB here: " + JSON.parse(body).Title);
       console.log("The movie's on IMDB here: " + JSON.parse(body).imdbID);
-      console.log("The movie's country is : " + JSON.parse(body).country);
-      console.log("The movie's plot is : " + JSON.parse(body).plot);
+      console.log("The movie's country is : " + JSON.parse(body).Country);
+      console.log("The movie's plot is : " + JSON.parse(body).Plot);
     }
   })
   .catch(function (error){
