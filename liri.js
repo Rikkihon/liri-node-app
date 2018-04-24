@@ -76,8 +76,7 @@ inquirer.prompt([
 
 switch (action) {
   case "My-Tweets":
-    console.log("got to My-Tweets in switch case");
-    tweets(SearchQ);
+    tweets();
     break;
 
   case "spotify-this-song":
@@ -89,7 +88,7 @@ switch (action) {
     break;
 
   case "do-what-it-says":
-    what - it();
+    what-it();
     break;
 
   default:
@@ -99,13 +98,11 @@ switch (action) {
 function tweets() {
   fs.readFile("random.txt", "utf8",)
   var params = { statuses: 'nodejs' };
-  //screen_name
-  console.log("made it into tweets()");
   client.get('statuses/user_timeline', params, function (error, tweets) {
     if (!error) {
-      console.log(tweets)
-      console.log(tweets[0].text);
-      fs.appendFile('random.txt',tweets[0].text, 'utf8')
+      for ( i= 0; i<20; i++ )
+      console.log("The most recent tweet is, but see the random.txt file for the last 20." + tweets[i].text);
+      fs.appendFile('random.txt',tweets[0].text, tweets[1].text, tweets[2].text, tweets[3].text, 'utf8')
       console.log("random.txt was updated with the most recent tweet below.")
     }
   })
@@ -135,16 +132,11 @@ function songs(SearchQ) {
 
 function movie(SearchQ) {
   fs.readFile("random.txt", "utf8",)
-  //if the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-  //If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/
-  //It's on Netflix!
   request("http://www.omdbapi.com/?t=" + SearchQ + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
     
     if (!error && response.statusCode === 200) {
       // Parse the body of the site and recover just the imdbRating
-      // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
       console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
-      //console.log("The movie's on IMDB here: " + JSON.parse(body).imdbID);
       console.log("The movie's release year is: " + JSON.parse(body).Year);
       console.log("The movie's on IMDB here: " + JSON.parse(body).title);
       console.log("The movie's on IMDB here: " + JSON.parse(body).imdbID);
